@@ -63,4 +63,66 @@
     * Si se crear usuarios, roles o base de datos con letras en mayusculas se debe usar comillas `""`.
 
     
+## Apis
 
+1. Usuarios (**Sprint 1**)
+2. Inventario (**Sprint 1**)
+3. Ventas (**Sprint 3**)
+
+### Usuarios
+
+* Para la base de datos de los usuario se creo los siguientes diagramas:
+
+#### Diagrama E-R
+
+<div aling="center">
+    <img src="./Diagramas/Usuario/Usuarios_(E-R).png" alt="Diagrama E-R"/>
+<div>
+
+
+#### Diagrama Relacional
+
+<div aling="center">
+    <img src="./Diagramas/Usuario/Usuarios_ModeloRelacional.png" alt="Diagrama Relacional"/>
+<div>
+
+#### Implementacion
+
+1. Creacion de la base de datos:
+
+```sql
+    CREATE DATABASE "Usuario" OWNER "Gilgamesh";
+```
+2. Creacion de la tabla para ello podemos realizarlo por consola o como lo vamos a hacer utilizando dbeaver.
+
+3. Realizacion de insert de Prueba.
+
+
+
+### Inventario
+
+* Para la base de datos del inventario se creo los siguientes diagramas:
+
+#### Diagrama E-R
+
+<div aling="center">
+    <img src="./Diagramas/Inventario/Inventario(E-R).png" alt="Diagrama E-R"/>
+<div>
+
+#### Diagrama Relacional
+
+<div aling="center">
+    <img src="./Diagramas/Inventario/InventarioRelacional.png" alt="Diagrama Relacional"/>
+<div>
+
+
+#### Implementacion
+
+1. Creacion de la base de datos:
+
+```sql
+    CREATE DATABASE "Inventario" OWNER "Gilgamesh";
+```
+2. Creacion de la tabla para ello podemos realizarlo por consola o como lo vamos a hacer utilizando dbeaver.
+
+3. Realizacion de insert de Prueba.
