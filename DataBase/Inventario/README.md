@@ -3,7 +3,7 @@
 
 <!--Para la realizacion de la API empezaremos por definir los requerimiento-->
 
-* **RF1:** El sistema debe permitri registrar los productos que ingresan al almacen. Se registrara en el sistema:
+* **RF1:** El sistema debe permitir registrar los productos que ingresan al almacen. Se registrara en el sistema:
     * Nombres de los productos.
     * Cantidad de los productos.
     * Fecha de ingreso.
@@ -51,7 +51,7 @@
 
 * **Normalizacion**
 
-    * Para la normalizacion eliminaremos valores multivaluados definiremos las claves primarias y clavesforaneas
+    * Para la normalizacion eliminaremos valores multivaluados definiremos las claves primarias y claves foraneas
 
         1. **Entidad Producto**
 
