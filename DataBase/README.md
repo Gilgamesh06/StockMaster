@@ -76,14 +76,14 @@
 #### Diagrama E-R
 
 <div aling="center">
-    <img src="./Diagramas/Usuario/Usuarios_(E-R).png" alt="Diagrama E-R"/>
+    <img src="./Usuario/Diagramas/Usuarios_(E-R).png" alt="Diagrama E-R"/>
 <div>
 
 
 #### Diagrama Relacional
 
 <div aling="center">
-    <img src="./Diagramas/Usuario/Usuarios_ModeloRelacional.png" alt="Diagrama Relacional"/>
+    <img src="./Usuario/Diagramas/Usuarios_ModeloRelacional.png" alt="Diagrama Relacional"/>
 <div>
 
 #### Implementacion
@@ -106,13 +106,13 @@
 #### Diagrama E-R
 
 <div aling="center">
-    <img src="./Diagramas/Inventario/Inventario(E-R).png" alt="Diagrama E-R"/>
+    <img src="./Inventario/Diagramas/Inventario(E-R).png" alt="Diagrama E-R"/>
 <div>
 
 #### Diagrama Relacional
 
 <div aling="center">
-    <img src="./Diagramas/Inventario/InventarioRelacional.png" alt="Diagrama Relacional"/>
+    <img src="./Inventario/Diagramas/InventarioRelacional.png" alt="Diagrama Relacional"/>
 <div>
 
 
