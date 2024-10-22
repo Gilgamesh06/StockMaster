@@ -83,7 +83,7 @@
 #### Diagrama Relacional
 
 <div aling="center">
-    <img src="./Usuario/Diagramas/Usuarios_ModeloRelacional.png" alt="Diagrama Relacional"/>
+    <img src="./Usuario/Diagramas/Usuario_ModeloRelacional.png" alt="Diagrama Relacional"/>
 <div>
 
 #### Implementacion
