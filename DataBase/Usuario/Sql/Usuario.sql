@@ -18,7 +18,7 @@ CREATE TABLE Empleado(
     clave VARCHAR(255) NOT NULL,  -- Almacena el hash de la password
     salario REAL NOT NULL,
     rol VARCHAR(30) NOT NULL,
-    persona_id INT NOT NULL,
+    persona_id INT NOT NULL UNIQUE, -- Asegura que cada persona solo puede ser un empleado
     
     CONSTRAINT fk_persona_id FOREIGN KEY (persona_id) REFERENCES Persona(id)
 );
@@ -29,7 +29,7 @@ CREATE TABLE Cliente(
     id SERIAL PRIMARY KEY,
     nit VARCHAR(50) NOT NULL UNIQUE,
     correo VARCHAR(80) NOT NULL UNIQUE,
-    persona_id INT NOT NULL,
+    persona_id INT NOT NULL UNIQUE, -- Asegura que cada persona solo puede aser un cliente
 
     CONSTRAINT fk_persona_id FOREIGN KEY (persona_id) REFERENCES Persona(id)
 );
