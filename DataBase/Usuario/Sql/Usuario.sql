@@ -1,3 +1,22 @@
+-- Crear usuario
+
+CREATE USER "Gilgamesh06" WITH PASSWORD 'coplandos';
+
+--  Crear Rol
+
+CREATE ROLE admin;
+
+-- Asignar Permiso a un Rol
+
+ALTER ROLE admin CREATEDB;
+
+-- Asignar rol a Usuario
+
+GRANT admin TO "Gilgamesh06";
+
+-- Crear database
+
+CREATE DATABASE "usuario" OWNER "Gilgamesh06";
 
 -- Creación de la entidad Persona
 
