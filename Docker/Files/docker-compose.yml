@@ -1,0 +1,95 @@
+version: '3.8'
+
+services:
+  usuario:
+    build:
+      context: ./Usuario
+    ports:
+      - "8001:8000"
+    volumes:
+      - usuario_data:/app/data
+      - ./Usuario/.env:/app/.env
+    networks:
+      - app-network
+    environment:
+      - DATABASE_URL=postgresql://Gilgamesh06:coplandos@db_usuario:5432/usuario
+    depends_on:
+      - db_usuario
+
+  ventas:
+    build:
+      context: ./Ventas
+    ports:
+      - "8002:8000"
+    volumes:
+      - ventas_data:/app/data
+      - ./Ventas/.env:/app/.env
+    networks:
+      - app-network
+    environment:
+      - DATABASE_URL=postgresql://Gilgamesh06:coplandos@db_ventas:5432/ventas
+    depends_on:
+      - db_ventas
+
+  inventario:
+    build:
+      context: ./Inventario
+    ports:
+      - "8003:8000"
+    volumes:
+      - inventario_data:/app/data
+      - ./Inventario/.env:/app/.env
+    networks:
+      - app-network
+    environment:
+      - DATABASE_URL=postgresql://Gilgamesh06:coplandos@db_inventario:5432/inventario
+    depends_on:
+      - db_inventario
+
+  db_usuario:
+    image: postgres:latest
+    volumes:
+      - db_usuario_data:/var/lib/postgresql/data
+      - ./Usuario/initdb:/docker-entrypoint-initdb.d  # Montar el script SQL
+    networks:
+      - app-network
+    environment:
+      - POSTGRES_DB=usuario
+      - POSTGRES_USER=Gilgamesh06
+      - POSTGRES_PASSWORD=coplandos
+
+  db_ventas:
+    image: postgres:latest
+    volumes:
+      - db_ventas_data:/var/lib/postgresql/data
+      - ./Ventas/initdb:/docker-entrypoint-initdb.d  # Montar el script SQL
+    networks:
+      - app-network
+    environment:
+      - POSTGRES_DB=ventas
+      - POSTGRES_USER=Gilgamesh06
+      - POSTGRES_PASSWORD=coplandos
+
+  db_inventario:
+    image: postgres:latest
+    volumes:
+      - db_inventario_data:/var/lib/postgresql/data
+      - ./Inventario/initdb:/docker-entrypoint-initdb.d  # Montar el script SQL
+    networks:
+      - app-network
+    environment:
+      - POSTGRES_DB=inventario
+      - POSTGRES_USER=Gilgamesh06
+      - POSTGRES_PASSWORD=coplandos
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  usuario_data:
+  ventas_data:
+  inventario_data:
+  db_usuario_data:
+  db_ventas_data:
+  db_inventario_data:
