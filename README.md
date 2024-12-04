@@ -31,11 +31,42 @@
 
 ### Requerimientos No Funcionales
 
-* **RNF1:** El sistema debe contar con seguridad de autenticacion para los usuarios.Estos se realizara por medio de un login.
-* **RNF2:** El sistema debe contar con alta disponibilidad por lo cual se eligio el uso de la arquitectura de microservicios.
-* **RNF3:** El sistema debe poder ser facil de hacer mantenimiento por lo cual se realizara la respectiva documentacion a nivel de codigo, a nivel de rutas y se segiran los estadares de codificacion.
-* **RNF4:** El sistema debe cumplir con el requerimiento de usabilidad por lo cual el sistema incorporar uun manual de usuario.
+* **Eficiencia**
+    * **RNF1:** El sistema debe ser capaz de responder a consultas de inventario en menos de 10 segundos si hay menos de 10000 registros.
 
+* **Fiabilidad**
+    * **RNF2:** El sistema debe estar disponible el 50% del tiempo.
+
+* **Confiabilidad**
+    * **RNF3:** El sistema debe garantizar que la información registrada no contenga duplicidad o redundancia asegurando la integridad de la información.
+
+* **Disponibilidad**
+    * **RNF4:** El sistema debe estar disponible en el horario laborar los 7 días de la semana.
+
+* **Usabilidad**
+    * **RNF5:** La interfaz de usuario debe ser accesible para el usuario con capacidad de realizar cualquier función con menos de 8 clics.
+
+* **Mantenimiento**
+    * **RNF6:** El sistema ofrece documentación detallada de cada componente del software.
+
+* **Flexibilidad**
+    * **RNF7:** El sistema permite el uso de cualquier sistema de gestor de base de datos relacional.
+
+* **Extensibilidad**
+    * **RNF8:** El sistema debe permitir la integración con nuevas funciones sin requerir modificaciones grandes o complejas a nivel de código.
+
+* **Seguridad**
+    * **RNF9:** El sistema solo debe permitir que usuario autenticados puedan usar el sistema.
+
+* **Interoperabilidad**
+    * **RNF10:** El sistema debe ser capaz de conectarse a sistemas externos.
+
+* **Concurrencia**
+    * **RNF11:** El sistema debe permitir el uso de 50 usuario activos realizando diferentes actividades o la misma actividad sin tener un rendimiento inferior al 80% del cual tendría con un solo usuario.
+
+* **Accesibilidad**
+    * **RNF12:** El sistema debe tener una documentación detallada de cada parte de la
+interfaz para que los usuarios puedan consultar y capacitar.
 
 ### Diagrama EDT
 
