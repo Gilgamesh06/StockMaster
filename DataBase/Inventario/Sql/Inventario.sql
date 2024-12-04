@@ -1,26 +1,31 @@
--- Crear usuario
+-- Crear usuario si no existe
+DO
+$$
+BEGIN
+   IF NOT EXISTS (
+      SELECT FROM pg_catalog.pg_roles
+      WHERE rolname = 'Gilgamesh06') THEN
 
-CREATE USER "Gilgamesh06" WITH PASSWORD 'coplandos';
+      CREATE USER "Gilgamesh06" WITH PASSWORD 'coplandos';
+   END IF;
+END
+$$;
 
---  Crear Rol
+-- Crear base de datos si no existe
+DO
+$$
+BEGIN
+   IF NOT EXISTS (
+      SELECT FROM pg_catalog.pg_database
+      WHERE datname = 'inventario') THEN
 
-CREATE ROLE admin;
+      CREATE DATABASE "inventario" OWNER "Gilgamesh06";
+   END IF;
+END
+$$;
 
--- Asignar Permiso a un Rol
-
-ALTER ROLE admin CREATEDB;
-
--- Asignar rol a Usuario
-
-GRANT admin TO "Gilgamesh06";
-
--- Crear database
-
-CREATE DATABASE "inventario" OWNER "Gilgamesh06";
-
--- Creacion de la entidad Producto
-
-CREATE TABLE Producto(
+-- Crear tabla producto si no existe
+CREATE TABLE IF NOT EXISTS producto(
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
     tipo VARCHAR(50) NOT NULL,
@@ -30,46 +35,37 @@ CREATE TABLE Producto(
     referencia VARCHAR(15) NOT NULL UNIQUE
 );
 
--- Creacion de la entidad Pedido
-
-CREATE TABLE Pedido(
+-- Crear tabla pedido si no existe
+CREATE TABLE IF NOT EXISTS pedido(
     id SERIAL PRIMARY KEY,
     proveedor VARCHAR(100) NOT NULL, 
     fecha DATE DEFAULT CURRENT_DATE
-
 );
 
-
--- Creacion de la entidad intermedia PedidoProducto
-
-CREATE TABLE PedidoProducto(
+-- Crear tabla pedidoproducto si no existe
+CREATE TABLE IF NOT EXISTS pedidoproducto(
     id_pedido INT NOT NULL,
     id_producto INT NOT NULL,
     cantidad_producto INT NOT NULL,
-    PRIMARY KEY (id_pedido,id_producto),
-
-    CONSTRAINT fk_pedido_id FOREIGN KEY (id_pedido) REFERENCES Pedido(id),
-    CONSTRAINT fk_producto_id FOREIGN KEY (id_producto) REFERENCES Producto(id) 
-
+    PRIMARY KEY (id_pedido, id_producto),
+    CONSTRAINT fk_pedido_id FOREIGN KEY (id_pedido) REFERENCES pedido(id),
+    CONSTRAINT fk_producto_id FOREIGN KEY (id_producto) REFERENCES producto(id)
 );
 
--- Creacion de la entidad Merma
-
-CREATE TABLE Merma(
+-- Crear tabla merma si no existe
+CREATE TABLE IF NOT EXISTS merma(
     id SERIAL PRIMARY KEY,
     descripcion VARCHAR(255) NOT NULL,
     fecha DATE DEFAULT CURRENT_DATE
 );
 
-
--- Creacion de la entidad intermedio ProductoMerma
-
-CREATE TABLE ProductoMerma(
+-- Crear tabla productomerma si no existe
+CREATE TABLE IF NOT EXISTS productomerma(
     id_producto INT NOT NULL,
     id_merma INT NOT NULL,
     cantidad_producto INT NOT NULL,
-    PRIMARY KEY(id_producto,id_merma),
-
-    CONSTRAINT fk_producto_id FOREIGN KEY (id_producto) REFERENCES Producto(id),
-    CONSTRAINT fk_merma_id FOREIGN KEY (id_merma) REFERENCES Merma(id)
+    PRIMARY KEY(id_producto, id_merma),
+    CONSTRAINT fk_producto_id FOREIGN KEY (id_producto) REFERENCES producto(id),
+    CONSTRAINT fk_merma_id FOREIGN KEY (id_merma) REFERENCES merma(id)
 );
+
