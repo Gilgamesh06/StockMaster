@@ -54,13 +54,14 @@
         ```sql
             CREATE DATABASE mi_base_datos OWNER mi_usuario;
         ```
-* **Ingresar con Usuario Definido**
-    * Para ingresar se debe especificar el puerto, el usuario y la base de datos:
-    ```sql
-        psql -h localhost -p 5432 -U "Mi_usuario" -d data_base;
-    ```
-* **Nota**
-    * Si se crear usuarios, roles o base de datos con letras en mayusculas se debe usar comillas `""`.
+    * **Ingresar con Usuario Definido**
+
+        * Para ingresar se debe especificar el puerto, el usuario y la base de datos:
+        ```sql
+            psql -h localhost -p 5432 -U "Mi_usuario" -d data_base;
+        ```
+    * **Nota**
+        * Si se crear usuarios, roles o base de datos con letras en mayusculas se debe usar comillas `""`.
 
     
 ## Apis
@@ -90,9 +91,9 @@
 
 1. Creacion de la base de datos:
 
-```sql
-    CREATE DATABASE "Usuario" OWNER "Gilgamesh";
-```
+    ```sql
+        CREATE DATABASE "Usuario" OWNER "Gilgamesh";
+    ```
 2. Creacion de la tabla para ello podemos realizarlo por consola o como lo vamos a hacer utilizando dbeaver.
 
 3. Realizacion de insert de Prueba.
@@ -120,9 +121,39 @@
 
 1. Creacion de la base de datos:
 
-```sql
-    CREATE DATABASE "Inventario" OWNER "Gilgamesh";
-```
+    ```sql
+        CREATE DATABASE "Inventario" OWNER "Gilgamesh";
+    ```
+2. Creacion de la tabla para ello podemos realizarlo por consola o como lo vamos a hacer utilizando dbeaver.
+
+3. Realizacion de insert de Prueba.
+
+
+
+### Ventas
+
+* Para la base de datos del inventario se creo los siguientes diagramas:
+
+#### Diagrama E-R
+
+<div aling="center">
+    <img src="./Ventas/Diagramas/Ventas_(E-R).png" alt="Diagrama E-R"/>
+<div>
+
+#### Diagrama Relacional
+
+<div aling="center">
+    <img src="./Ventas/Diagramas/Ventas_ModeloRelacional.png" alt="Diagrama Relacional"/>
+<div>
+
+
+#### Implementacion
+
+1. Creacion de la base de datos:
+
+    ```sql
+        CREATE DATABASE "Ventas" OWNER "Gilgamesh";
+    ```
 2. Creacion de la tabla para ello podemos realizarlo por consola o como lo vamos a hacer utilizando dbeaver.
 
 3. Realizacion de insert de Prueba.
