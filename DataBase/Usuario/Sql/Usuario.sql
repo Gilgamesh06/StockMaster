@@ -1,37 +1,41 @@
--- Crear usuario
+-- Crear usuario si no existe
+DO
+$$
+BEGIN
+   IF NOT EXISTS (
+      SELECT FROM pg_catalog.pg_roles
+      WHERE rolname = 'Gilgamesh06') THEN
 
-CREATE USER "Gilgamesh06" WITH PASSWORD 'coplandos';
+      CREATE USER "Gilgamesh06" WITH PASSWORD 'coplandos';
+   END IF;
+END
+$$;
 
---  Crear Rol
+-- Crear base de datos si no existe
+DO
+$$
+BEGIN
+   IF NOT EXISTS (
+      SELECT FROM pg_catalog.pg_database
+      WHERE datname = 'usuario') THEN
 
-CREATE ROLE admin;
+      CREATE DATABASE "usuario" OWNER "Gilgamesh06";
+   END IF;
+END
+$$;
 
--- Asignar Permiso a un Rol
-
-ALTER ROLE admin CREATEDB;
-
--- Asignar rol a Usuario
-
-GRANT admin TO "Gilgamesh06";
-
--- Crear database
-
-CREATE DATABASE "usuario" OWNER "Gilgamesh06";
-
--- Creación de la entidad Persona
-
-CREATE TABLE Persona(
+-- Creación de la entidad persona si no existe
+CREATE TABLE IF NOT EXISTS persona (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
     documento VARCHAR(15) NOT NULL UNIQUE,
-    fechaNacimiento DATE NOT NULL,
-    genero VARCHAR(10) NOT NULL  -- Cambio de genero de tipo bool a tipo String por culpa de las nuevas perpectivas de genero.
+    fechanacimiento DATE NOT NULL,
+    genero VARCHAR(10) NOT NULL  -- Cambio de genero de tipo bool a tipo String por culpa de las nuevas perspectivas de género.
 );
 
--- Creacion de la entidad Empleado
-
-CREATE TABLE Empleado(
+-- Creación de la entidad empleado si no existe
+CREATE TABLE IF NOT EXISTS empleado (
     id SERIAL PRIMARY KEY,
     usuario VARCHAR(50) NOT NULL UNIQUE,
     clave VARCHAR(255) NOT NULL,  -- Almacena el hash de la password
@@ -39,16 +43,16 @@ CREATE TABLE Empleado(
     rol VARCHAR(30) NOT NULL,
     persona_id INT NOT NULL UNIQUE, -- Asegura que cada persona solo puede ser un empleado
     
-    CONSTRAINT fk_persona_id FOREIGN KEY (persona_id) REFERENCES Persona(id)
+    CONSTRAINT fk_persona_id FOREIGN KEY (persona_id) REFERENCES persona(id)
 );
 
--- Creacion de la entidad Cliente
-
-CREATE TABLE Cliente(
+-- Creación de la entidad cliente si no existe
+CREATE TABLE IF NOT EXISTS cliente (
     id SERIAL PRIMARY KEY,
     nit VARCHAR(50) NOT NULL UNIQUE,
     correo VARCHAR(80) NOT NULL UNIQUE,
-    persona_id INT NOT NULL UNIQUE, -- Asegura que cada persona solo puede aser un cliente
+    persona_id INT NOT NULL UNIQUE, -- Asegura que cada persona solo puede ser un cliente
 
-    CONSTRAINT fk_persona_id FOREIGN KEY (persona_id) REFERENCES Persona(id)
+    CONSTRAINT fk_persona_id FOREIGN KEY (persona_id) REFERENCES persona(id)
 );
+
