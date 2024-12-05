@@ -1,0 +1,35 @@
+[
+  {
+    "nit": "123456789",
+    "correo": "cliente1@correo.com",
+    "persona": {
+      "nombre": "Ana",
+      "apellido": "Martínez",
+      "documento": "98765432",
+      "fechanacimiento": "1990-03-10",
+      "genero": "femenino"
+    }
+  },
+  {
+    "nit": "987654321",
+    "correo": "cliente2@correo.com",
+    "persona": {
+      "nombre": "Luis",
+      "apellido": "Hernández",
+      "documento": "12345678",
+      "fechanacimiento": "1988-07-25",
+      "genero": "masculino"
+    }
+  },
+  {
+    "nit": "456789123",
+    "correo": "cliente3@correo.com",
+    "persona": {
+      "nombre": "Sofía",
+      "apellido": "García",
+      "documento": "23456789",
+      "fechanacimiento": "1995-12-15",
+      "genero": "femenino"
+    }
+  }
+]
