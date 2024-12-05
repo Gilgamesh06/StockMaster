@@ -1,0 +1,47 @@
+[
+  {
+    "cliente_documento": "98765432",
+    "cliente_nit": "123456789",
+    "empleado_documento": "87654321",
+    "fecha": "2024-12-05",
+    "valor_total": 180.0,
+    "detalles": [
+      {
+        "producto": "Producto A",
+        "cantidad": 1,
+        "precio": 180.0,
+        "valor": 180.0
+      }
+    ]
+  },
+  {
+    "cliente_documento": "12345678",
+    "cliente_nit": "987654321",
+    "empleado_documento": "12345678",
+    "fecha": "2024-12-05",
+    "valor_total": 30.0,
+    "detalles": [
+      {
+        "producto": "Producto B",
+        "cantidad": 1,
+        "precio": 30.0,
+        "valor": 30.0
+      }
+    ]
+  },
+  {
+    "cliente_documento": "23456789",
+    "cliente_nit": "456789123",
+    "empleado_documento": "23456789",
+    "fecha": "2024-12-05",
+    "valor_total": 6.0,
+    "detalles": [
+      {
+        "producto": "Producto C",
+        "cantidad": 1,
+        "precio": 6.0,
+        "valor": 6.0
+      }
+    ]
+  }
+]
