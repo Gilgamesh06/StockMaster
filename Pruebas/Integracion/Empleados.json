@@ -1,0 +1,43 @@
+[
+  {
+    "usuario": "vendedor1",
+    "clave": "clave123",
+    "salario": 2500,
+    "rol": "ventas",
+    "persona": {
+      "nombre": "Laura",
+      "apellido": "Martínez",
+      "documento": "12345678",
+      "fechanacimiento": "1990-04-15",
+      "genero": "femenino"
+    }
+  },
+
+  {
+    "usuario": "vendedor2",
+    "clave": "clave456",
+    "salario": 2700,
+    "rol": "ventas",
+    "persona": {
+      "nombre": "Carlos",
+      "apellido": "González",
+      "documento": "87654321",
+      "fechanacimiento": "1985-08-20",
+      "genero": "masculino"
+    }
+  },
+
+  {
+    "usuario": "vendedor3",
+    "clave": "clave789",
+    "salario": 2300,
+    "rol": "ventas",
+    "persona": {
+      "nombre": "Sofía",
+      "apellido": "López",
+      "documento": "23456789",
+      "fechanacimiento": "1992-12-05",
+      "genero": "femenino"
+    }
+  }
+]
