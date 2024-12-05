@@ -1,0 +1,28 @@
+[
+  {
+    "nombre": "Producto A",
+    "tipo": "Electrónica",
+    "valor_unitario": 150.0,
+    "valor_venta": 180.0,
+    "cantidad": 10,
+    "referencia": "1234567890123"
+  },
+
+  {
+    "nombre": "Producto B",
+    "tipo": "Ropa",
+    "valor_unitario": 25.0,
+    "valor_venta": 30.0,
+    "cantidad": 50,
+    "referencia": "987654321012"
+  },
+
+  {
+    "nombre": "Producto C",
+    "tipo": "Alimentos",
+    "valor_unitario": 5.0,
+    "valor_venta": 6.0,
+    "cantidad": 100,
+    "referencia": "456789123456"
+  }
+]
